@@ -5,20 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Preparación de Impuestos</title>
   
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- React & ReactDOM -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   
-  <!-- Babel -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
-  <!-- HEIC to JPG Converter -->
   <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
 
   <style>
@@ -703,15 +698,18 @@
           
           <form onSubmit={handleSubmit} onInvalid={handleInvalid} className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden w-full">
             
-            {/* CABECERA (Con Selector de Idiomas) */}
+            {/* CABECERA (Con Selector de Idiomas y Logo Icono) */}
             <div className="bg-[#f6851f] p-6 text-white w-full relative">
-              <div className="absolute top-4 right-4 flex space-x-1 bg-black/20 p-1 rounded-lg">
-                <button type="button" onClick={() => setLang('es')} className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${lang === 'es' ? 'bg-white text-[#f6851f] shadow' : 'text-white hover:bg-white/10'}`}>ES</button>
-                <button type="button" onClick={() => setLang('en')} className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${lang === 'en' ? 'bg-white text-[#f6851f] shadow' : 'text-white hover:bg-white/10'}`}>EN</button>
+              <div className="absolute top-4 right-4 flex flex-col items-end space-y-3">
+                <div className="flex space-x-1 bg-black/20 p-1 rounded-lg">
+                  <button type="button" onClick={() => setLang('es')} className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${lang === 'es' ? 'bg-white text-[#f6851f] shadow' : 'text-white hover:bg-white/10'}`}>ES</button>
+                  <button type="button" onClick={() => setLang('en')} className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${lang === 'en' ? 'bg-white text-[#f6851f] shadow' : 'text-white hover:bg-white/10'}`}>EN</button>
+                </div>
+                <img src="https://i.postimg.cc/zGJFT77R/logo_yoli_icono.png" alt="Logo" className="h-16 object-contain drop-shadow-md" />
               </div>
               
-              <h1 className="text-2xl font-bold flex items-center pr-20"><i className="fa-solid fa-file-invoice-dollar mr-3"></i> {t.appTitle}</h1>
-              <p className="text-orange-100 mt-2 text-sm">{t.appSubtitle}</p>
+              <h1 className="text-2xl font-bold flex items-center pr-24"><i className="fa-solid fa-file-invoice-dollar mr-3"></i> {t.appTitle}</h1>
+              <p className="text-orange-100 mt-2 text-sm pr-24">{t.appSubtitle}</p>
               <div className="mt-4 inline-block bg-black/20 px-3 py-1 rounded-full text-xs font-mono">{t.reqId} {formId.toUpperCase()}</div>
             </div>
 
